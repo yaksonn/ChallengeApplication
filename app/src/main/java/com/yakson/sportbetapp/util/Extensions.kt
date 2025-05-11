@@ -1,6 +1,7 @@
 package com.yakson.sportbetapp.util
 
 import android.graphics.drawable.Drawable
+import android.view.View
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
@@ -11,6 +12,13 @@ import com.google.firebase.auth.FirebaseAuth
 import com.yakson.sportbetapp.R
 import java.text.SimpleDateFormat
 import java.util.*
+
+fun View.showView(show: Boolean) {
+    this.visibility = when (show) {
+        true -> View.VISIBLE
+        false -> View.GONE
+    }
+}
 
 fun TextView.loadTeamLogo(logoUrl: String?) {
     if (logoUrl.isNullOrEmpty()) {

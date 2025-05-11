@@ -1,20 +1,32 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:padding="@dimen/value_8">
+    android:layout_margin="@dimen/value_8"
+    android:elevation="@dimen/value_4"
+    android:orientation="vertical"
+    android:padding="@dimen/value_8"
+    app:cardCornerRadius="@dimen/value_4">
 
-    <TextView
-        android:id="@+id/oddTypeTextView"
-        android:layout_width="0dp"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        tools:text="1 X 2" />
+        android:gravity="center"
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/oddValueTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:text="2.10" />
-</LinearLayout> 
+        <TextView
+            android:id="@+id/oddValueTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="2.10" />
+
+        <TextView
+            android:id="@+id/oddTypeTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="1 X 2" />
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

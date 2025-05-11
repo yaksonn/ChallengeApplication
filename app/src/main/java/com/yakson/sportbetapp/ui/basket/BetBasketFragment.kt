@@ -39,8 +39,8 @@ class BetBasketFragment : BaseFragment<FragmentBetBasketBinding, BetBasketViewMo
         setupClearButton()
     }
 
-    private fun setupRecyclerView() {
-        binding.basketRecyclerView.adapter = basketAdapter
+    private fun setupRecyclerView() = with(binding) {
+        basketRecyclerView.adapter = basketAdapter
     }
 
     private fun observeBasket() {
@@ -61,14 +61,15 @@ class BetBasketFragment : BaseFragment<FragmentBetBasketBinding, BetBasketViewMo
         }
     }
 
-    private fun updateEventCount(count: Int) {
-        binding.eventCountTextView.text = getString(R.string.event_count, count)
+    private fun updateEventCount(count: Int) = with(binding) {
+        eventCountTextView.text = getString(R.string.event_count, count)
     }
 
-    private fun setupClearButton() {
-        binding.clearBasket.setOnClickListener {
+    private fun setupClearButton() = with(binding) {
+        clearBasket.setOnClickListener {
             viewModel.clearBasket()
-            Toast.makeText(requireContext(), getString(R.string.basket_cleared), Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), getString(R.string.basket_cleared), Toast.LENGTH_SHORT)
+                .show()
         }
     }
 } 

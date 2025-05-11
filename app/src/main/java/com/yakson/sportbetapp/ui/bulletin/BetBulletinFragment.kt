@@ -35,25 +35,26 @@ class BetBulletinFragment : BaseFragment<FragmentBetBulletinBinding, BetBulletin
         viewModel.fetchEvents()
     }
 
-    private fun setupRecyclerView() {
-        binding.eventsRecyclerView.adapter = bulletinAdapter
+    private fun setupRecyclerView() = with(binding) {
+        eventsRecyclerView.adapter = bulletinAdapter
     }
 
-    private fun observeEvents() {
-        viewModel.events.observe(viewLifecycleOwner) { events ->
+    private fun observeEvents() = with(viewModel) {
+        events.observe(viewLifecycleOwner) { events ->
             bulletinAdapter.submitList(events)
         }
     }
 
-    private fun setupSearchView() {
-        binding.searchEditText.addTextChangedListener {
+    private fun setupSearchView() = with(binding) {
+        searchEditText.addTextChangedListener {
             val query = it.toString()
             viewModel.searchEvents(query)
         }
     }
 
     private fun navigateToEventDetail(eventId: String) {
-        val action = BetBulletinFragmentDirections.actionBetBulletinFragmentToBetDetailFragment(eventId)
+        val action =
+            BetBulletinFragmentDirections.actionBetBulletinFragmentToBetDetailFragment(eventId)
         findNavController().navigate(action)
     }
 } 

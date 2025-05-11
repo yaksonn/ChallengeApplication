@@ -20,10 +20,10 @@ class BasketAdapter(
     }
 
     override fun bind(holder: BasketViewHolder, item: Outcome) {
-        holder.binding.basketEventNameTextView.text = item.name
-        holder.binding.basketOddTextView.text = item.price.toString()
-        holder.binding.closeButton.setOnClickListener {
-            onRemove(item)
+        holder.binding.apply {
+            basketEventNameTextView.text = item.name
+            basketOddTextView.text = item.price.toString()
+            closeButton.setOnClickListener { onRemove(item) }
         }
     }
 

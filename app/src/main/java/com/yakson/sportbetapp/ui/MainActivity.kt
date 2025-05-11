@@ -14,6 +14,7 @@ import com.yakson.sportbetapp.ui.basket.BetBasketViewModel
 import com.yakson.sportbetapp.ui.bulletin.BetBulletinFragmentDirections
 import com.yakson.sportbetapp.ui.basket.BetBasketFragmentDirections
 import com.yakson.sportbetapp.ui.detail.BetDetailFragmentDirections
+import com.yakson.sportbetapp.util.showView
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -35,14 +36,10 @@ class MainActivity : BaseActivity<ActivityMainBinding, AuthViewModel>() {
 
         setSupportActionBar(binding.toolbar.toolbar)
         supportActionBar?.setDisplayShowTitleEnabled(false)
-
-        // Splash screen'i 2 saniye göster
         var keepSplashScreen = true
         splashScreen.setKeepOnScreenCondition { keepSplashScreen }
 
-        // Kullanıcı durumunu kontrol et
         viewModel.currentUser.observe(this) { user ->
-            // Kullanıcı giriş yapmışsa betBulletinFragment'a, yapmamışsa welcomeFragment'a yönlendir
             val destination = if (user != null) {
                 R.id.betBulletinFragment
             } else {
@@ -53,16 +50,11 @@ class MainActivity : BaseActivity<ActivityMainBinding, AuthViewModel>() {
             keepSplashScreen = false
         }
 
-        // Sepetteki kupon sayısını gözlemle
         lifecycleScope.launch {
             basketViewModel.basket.collect { basket ->
                 binding.toolbar.basketBadge.apply {
-                    if (basket.isNotEmpty()) {
-                        text = basket.size.toString()
-                        visibility = View.VISIBLE
-                    } else {
-                        visibility = View.GONE
-                    }
+                    showView(basket.isNotEmpty())
+                    text = basket.size.toString()
                 }
             }
         }
@@ -71,16 +63,15 @@ class MainActivity : BaseActivity<ActivityMainBinding, AuthViewModel>() {
         setupNavigationListener()
     }
 
-    private fun setupToolbarClickListeners() {
-        binding.toolbar.settingsIcon.setOnClickListener {
+    private fun setupToolbarClickListeners() = with(binding) {
+        toolbar.settingsIcon.setOnClickListener {
             navigateToSettings()
         }
 
-        binding.toolbar.basketIcon.setOnClickListener {
+        toolbar.basketIcon.setOnClickListener {
             navigateToBasket()
         }
-
-        binding.toolbar.backIcon.setOnClickListener {
+        toolbar.backIcon.setOnClickListener {
             navController.navController.navigateUp()
         }
     }
@@ -89,7 +80,7 @@ class MainActivity : BaseActivity<ActivityMainBinding, AuthViewModel>() {
         navController.navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
                 R.id.settingsFragment, R.id.betBasketFragment, R.id.betDetailFragment -> {
-                    binding.toolbar.backIcon.visibility = View.VISIBLE
+                    binding.toolbar.backIcon.showView(show = true)
                     binding.toolbar.toolbarTitle.text = when (destination.id) {
                         R.id.settingsFragment -> getString(R.string.settings)
                         R.id.betBasketFragment -> getString(R.string.basket)
@@ -97,12 +88,14 @@ class MainActivity : BaseActivity<ActivityMainBinding, AuthViewModel>() {
                         else -> getString(R.string.sport_bet)
                     }
                 }
+
                 R.id.welcomeFragment, R.id.loginFragment, R.id.registerFragment -> {
-                    binding.toolbar.root.visibility = View.GONE
+                    binding.toolbar.root.showView(show = false)
                 }
+
                 else -> {
-                    binding.toolbar.root.visibility = View.VISIBLE
-                    binding.toolbar.backIcon.visibility = View.GONE
+                    binding.toolbar.root.showView(show = true)
+                    binding.toolbar.backIcon.showView(show = false)
                     binding.toolbar.toolbarTitle.text = getString(R.string.sport_bet)
                 }
             }
@@ -117,6 +110,7 @@ class MainActivity : BaseActivity<ActivityMainBinding, AuthViewModel>() {
                     BetBulletinFragmentDirections.actionBetBulletinFragmentToSettingsFragment()
                 )
             }
+
             R.id.betBasketFragment -> {
                 navController.navController.navigate(
                     BetBasketFragmentDirections.actionBetBasketFragmentToSettingsFragment()
@@ -133,6 +127,7 @@ class MainActivity : BaseActivity<ActivityMainBinding, AuthViewModel>() {
                     BetBulletinFragmentDirections.actionBetBulletinFragmentToBetBasketFragment()
                 )
             }
+
             R.id.betDetailFragment -> {
                 navController.navController.navigate(
                     BetDetailFragmentDirections.actionBetDetailFragmentToBetBasketFragment()

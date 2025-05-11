@@ -3,6 +3,7 @@ package com.yakson.sportbetapp.data
 import com.yakson.sportbetapp.BuildConfig
 import com.yakson.sportbetapp.model.Event
 import retrofit2.http.GET
+import retrofit2.http.Header
 import retrofit2.http.Query
 
 interface BetApi {

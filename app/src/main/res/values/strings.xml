@@ -6,6 +6,7 @@
     <string name="basket">Sepetim</string>
     <string name="ok">Tamam</string>
     <string name="odds">Oranlar</string>
+    <string name="odds_empty_state">Etkinliğe ait oran bulunamadı...</string>
     <string name="match_detail">Maç Detayı</string>
     <string name="search_hint">Etkinlik ara...</string>
     <string name="welcome">Hoş Geldiniz</string>

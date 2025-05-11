@@ -34,6 +34,11 @@ class BetBasketViewModel @Inject constructor(
         loadBasket()
     }
 
+
+    companion object {
+        private val BASKET_KEY = stringPreferencesKey("basket")
+    }
+
     private fun loadBasket() {
         viewModelScope.launch {
             basketDataStore.data.collectLatest { preferences ->
@@ -73,9 +78,5 @@ class BetBasketViewModel @Inject constructor(
             val basketJson = gson.toJson(basket)
             preferences[BASKET_KEY] = basketJson
         }
-    }
-
-    companion object {
-        private val BASKET_KEY = stringPreferencesKey("basket")
     }
 } 

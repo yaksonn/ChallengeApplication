@@ -43,7 +43,6 @@ class SettingsFragment : BaseFragment<FragmentSettingsBinding, AuthViewModel>() 
     }
 
     private fun setupClickListeners() {
-        // Versiyon numarasını göster
         val versionName = requireContext().packageManager
             .getPackageInfo(requireContext().packageName, 0).versionName
         binding.tvVersion.text = buildString {

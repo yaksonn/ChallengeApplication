@@ -11,9 +11,8 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class BetDetailViewModel @Inject constructor(
-    private val repository: BetRepository
-) : ViewModel() {
+class BetDetailViewModel @Inject constructor(private val repository: BetRepository) : ViewModel() {
+
     private val _event = MutableLiveData<Event?>()
     val event: LiveData<Event?> = _event
 

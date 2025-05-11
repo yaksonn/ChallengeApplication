@@ -26,15 +26,15 @@ class LoginFragment : BaseFragment<FragmentLoginBinding, AuthViewModel>() {
         setupClickListeners()
     }
 
-    private fun setupClickListeners() {
-        binding.btnLogin.setOnClickListener {
+    private fun setupClickListeners() = with(binding) {
+        btnLogin.setOnClickListener {
             val email = binding.etEmailInput.text.toString()
             val password = binding.etPasswordInput.text.toString()
             viewModel.login(email, password)
             navigateToMain()
         }
 
-        binding.tvRegister.setOnClickListener {
+        tvRegister.setOnClickListener {
             findNavController().navigate(R.id.action_loginFragment_to_registerFragment)
         }
     }

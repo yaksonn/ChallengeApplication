@@ -8,9 +8,8 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class BetBulletinViewModel @Inject constructor(
-    private val repository: BetRepository
-) : ViewModel() {
+class BetBulletinViewModel @Inject constructor(private val repository: BetRepository) :
+    ViewModel() {
 
     private val _events = MutableLiveData<List<Event>>()
     val events: LiveData<List<Event>> = _events
@@ -26,17 +25,9 @@ class BetBulletinViewModel @Inject constructor(
             val allEvents = repository.getCachedEvents()
             _events.value = allEvents.filter { event ->
                 event.home_team.contains(query, ignoreCase = true) ||
-                event.away_team.contains(query, ignoreCase = true)
+                        event.away_team.contains(query, ignoreCase = true)
             }
         }
     }
 
-    fun getEvent(eventId: String): LiveData<Event?> {
-        val result = MutableLiveData<Event?>()
-        viewModelScope.launch {
-            val event = repository.getCachedEvents().find { it.id == eventId }
-            result.value = event
-        }
-        return result
-    }
 } 

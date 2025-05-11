@@ -40,4 +40,6 @@
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
     <color name="red">#FF0000</color>
+
+    <color name="selected_odd_background">#E3F2FD</color>
 </resources>

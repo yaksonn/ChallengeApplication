@@ -35,6 +35,7 @@ class RegisterFragment : BaseFragment<FragmentRegisterBinding, AuthViewModel>() 
                 val password = etPasswordInput.text.toString()
                 if (validateInput(email, password)) {
                     viewModel.register(name, email, password)
+                    navigateToMain()
                 }
             }
 

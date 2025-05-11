@@ -11,9 +11,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class AuthViewModel @Inject constructor(
-    private val authRepository: AuthRepository
-) : ViewModel() {
+class AuthViewModel @Inject constructor(private val authRepository: AuthRepository) : ViewModel() {
 
     private val _currentUser = MutableLiveData<User?>()
     val currentUser: LiveData<User?> = _currentUser
