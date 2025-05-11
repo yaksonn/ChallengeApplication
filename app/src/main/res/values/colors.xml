@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary Colors -->
+    <color name="primary">#1B5E20</color> <!-- Koyu Yeşil -->
+    <color name="primary_dark">#003300</color> <!-- Daha Koyu Yeşil -->
+    <color name="primary_light">#4CAF50</color> <!-- Açık Yeşil -->
+    <color name="accent">#2196F3</color> <!-- Mavi -->
+
+    <!-- Secondary Colors -->
+    <color name="secondary">#1976D2</color> <!-- Koyu Mavi -->
+    <color name="secondary_dark">#0D47A1</color> <!-- Daha Koyu Mavi -->
+    <color name="secondary_light">#64B5F6</color> <!-- Açık Mavi -->
+
+    <!-- Background Colors -->
+    <color name="background">#FFFFFF</color> <!-- Beyaz -->
+    <color name="background_dark">#121212</color> <!-- Koyu Arkaplan -->
+    <color name="surface">#F5F5F5</color> <!-- Açık Gri -->
+    <color name="surface_dark">#1E1E1E</color> <!-- Koyu Gri -->
+
+    <!-- Text Colors -->
+    <color name="text_primary">#212121</color> <!-- Koyu Gri -->
+    <color name="text_secondary">#757575</color> <!-- Orta Gri -->
+    <color name="text_primary_dark">#FFFFFF</color> <!-- Beyaz -->
+    <color name="text_secondary_dark">#B3FFFFFF</color> <!-- Yarı Saydam Beyaz -->
+
+    <!-- Status Colors -->
+    <color name="success">#4CAF50</color> <!-- Yeşil -->
+    <color name="error">#F44336</color> <!-- Kırmızı -->
+    <color name="warning">#FFC107</color> <!-- Sarı -->
+    <color name="info">#2196F3</color> <!-- Mavi -->
+
+    <!-- Common Colors -->
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="transparent">#00000000</color>
+
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="red">#FF0000</color>
+</resources>

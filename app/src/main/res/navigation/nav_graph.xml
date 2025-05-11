@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/welcomeFragment">
+
+    <fragment
+        android:id="@+id/welcomeFragment"
+        android:name="com.yakson.sportbetapp.ui.auth.WelcomeFragment"
+        android:label="WelcomeFragment">
+        <action
+            android:id="@+id/action_welcomeFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_welcomeFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_welcomeFragment_to_betBulletinFragment"
+            app:destination="@id/betBulletinFragment"
+            app:popUpTo="@id/welcomeFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.yakson.sportbetapp.ui.auth.LoginFragment"
+        android:label="LoginFragment">
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_betBulletinFragment"
+            app:destination="@id/betBulletinFragment"
+            app:popUpTo="@id/welcomeFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.yakson.sportbetapp.ui.auth.RegisterFragment"
+        android:label="RegisterFragment">
+        <action
+            android:id="@+id/action_registerFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_registerFragment_to_betBulletinFragment"
+            app:destination="@id/betBulletinFragment"
+            app:popUpTo="@id/welcomeFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.yakson.sportbetapp.ui.settings.SettingsFragment"
+        android:label="SettingsFragment"
+        tools:layout="@layout/fragment_settings">
+        <action
+            android:id="@+id/action_settingsFragment_to_welcomeFragment"
+            app:destination="@id/welcomeFragment"
+            app:popUpTo="@id/welcomeFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/betBulletinFragment"
+        android:name="com.yakson.sportbetapp.ui.bulletin.BetBulletinFragment"
+        android:label="Bet Bulletin">
+        <action
+            android:id="@+id/action_betBulletinFragment_to_betDetailFragment"
+            app:destination="@id/betDetailFragment" />
+        <action
+            android:id="@+id/action_betBulletinFragment_to_betBasketFragment"
+            app:destination="@id/betBasketFragment" />
+        <action
+            android:id="@+id/action_betBulletinFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/betDetailFragment"
+        android:name="com.yakson.sportbetapp.ui.detail.BetDetailFragment"
+        android:label="Bet Detail">
+        <argument
+            android:name="eventId"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_betDetailFragment_to_betBasketFragment"
+            app:destination="@id/betBasketFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/betBasketFragment"
+        android:name="com.yakson.sportbetapp.ui.basket.BetBasketFragment"
+        android:label="Bet Basket"
+        tools:layout="@layout/fragment_bet_basket">
+        <action
+            android:id="@+id/action_betBasketFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+    </fragment>
+
+</navigation> 

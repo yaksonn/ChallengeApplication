@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "609977318911",
+    "project_id": "sportbetapp-8ee02",
+    "storage_bucket": "sportbetapp-8ee02.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:609977318911:android:d7d1ec728422daa9b83bca",
+        "android_client_info": {
+          "package_name": "com.yakson.sportbetapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD2sY7PcJFlP3lKoFO4hGZJjmf1on73BwE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
