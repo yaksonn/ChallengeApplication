@@ -4,16 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/toolbar"
     android:layout_width="match_parent"
-    android:layout_height="60dp"
+    android:layout_height="@dimen/value_60"
     android:background="?attr/colorPrimary"
-    android:elevation="4dp"
+    android:elevation="@dimen/value_4"
     android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
     app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
     <ImageView
         android:id="@+id/backIcon"
-        android:layout_width="32dp"
-        android:layout_height="32dp"
+        android:layout_width="@dimen/value_32"
+        android:layout_height="@dimen/value_32"
         android:src="@drawable/ic_back"
         android:visibility="gone" />
 
@@ -29,18 +29,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="end"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="@dimen/value_16"
         android:orientation="horizontal">
 
         <FrameLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp">
+            android:layout_marginEnd="@dimen/value_16">
 
             <ImageView
                 android:id="@+id/basketIcon"
-                android:layout_width="32dp"
-                android:layout_height="32dp"
+                android:layout_width="@dimen/value_32"
+                android:layout_height="@dimen/value_32"
                 android:src="@drawable/ic_basket"
                 app:tint="@color/white" />
 
@@ -53,7 +53,7 @@
                 android:layout_marginTop="-4dp"
                 android:background="@drawable/badge_background"
                 android:gravity="center"
-                android:minWidth="16dp"
+                android:minWidth="@dimen/value_16"
                 android:textColor="@android:color/white"
                 android:textSize="12sp"
                 android:visibility="gone"
@@ -63,8 +63,8 @@
 
         <ImageView
             android:id="@+id/settingsIcon"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
+            android:layout_width="@dimen/value_32"
+            android:layout_height="@dimen/value_32"
             android:src="@drawable/ic_settings"
             app:tint="@android:color/white" />
 

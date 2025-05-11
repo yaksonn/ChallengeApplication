@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="@dimen/value_16">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/basketRecyclerView"
@@ -17,7 +17,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="@dimen/value_8"
         android:gravity="end"
         android:orientation="horizontal">
 
@@ -27,7 +27,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
             android:text="@string/total_price"
-            android:textSize="16sp"
+            android:textSize="@dimen/text_value_16"
             android:textStyle="bold" />
 
         <TextView
@@ -35,7 +35,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/event_count"
-            android:textSize="16sp" />
+            android:textSize="@dimen/text_value_16" />
     </LinearLayout>
 
     <Button

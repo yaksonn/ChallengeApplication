@@ -4,26 +4,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="@dimen/value_16">
 
     <EditText
         android:id="@+id/searchEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
+        android:layout_margin="@dimen/value_16"
         android:textColor="@color/text_primary"
         android:background="@drawable/bg_search"
         android:drawableStart="@drawable/ic_search"
-        android:drawablePadding="8dp"
+        android:drawablePadding="@dimen/value_8"
         android:hint="@string/search_hint"
-        android:padding="12dp"
-        android:textSize="14sp" />
+        android:padding="@dimen/value_12"
+        android:textSize="@dimen/text_value_14" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/eventsRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="@dimen/value_8"
         android:layout_weight="1"
         android:orientation="vertical"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />

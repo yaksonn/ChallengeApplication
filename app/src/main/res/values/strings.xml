@@ -38,4 +38,5 @@
     <string name="light_theme">Açık Tema</string>
     <string name="dark_theme">Koyu Tema</string>
     <string name="system_theme">Sistem Tema</string>
+    <string name="add_to_coupon">Kupona Ekle</string>
 </resources>
