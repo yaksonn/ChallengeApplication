@@ -29,15 +29,14 @@ Uygulamayı geliştirirken modern Android teknolojilerini kullandım:
 
 1. Projeyi bilgisayarınıza indirin
 2. Android Studio'da açın
-3. `local.properties` dosyasına API anahtarlarınızı ekleyin:
+3. `gradle.properties` dosyasına API anahtarlarınızı ekleyin:
 ```properties
 ODDS_API_KEY=your_api_key_here
 ODDS_API_BASE_URL=your_base_url_here
 ```
-4. Çalıştırın ve kullanmaya başlayın!
+4. Çalıştırın ve kullanmaya başlayın.
 
 ## API Kullanımı
 
-Maç oranları için The Odds API'yi kullanıyorum. API anahtarınızı `local.properties` dosyasında tanımlamanız yeterli.
+Maç oranları için The Odds API'yi kullanıyorum. API anahtarınızı `gradle.properties` dosyasında tanımlamanız yeterli olacaktır.
 
-Umarım bu uygulama size yardımcı olur! İyi kullanımlar! 😊
