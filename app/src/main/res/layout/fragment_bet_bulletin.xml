@@ -11,12 +11,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/value_16"
-        android:textColor="@color/text_primary"
         android:background="@drawable/bg_search"
         android:drawableStart="@drawable/ic_search"
         android:drawablePadding="@dimen/value_8"
+        android:drawableTint="@color/black"
         android:hint="@string/search_hint"
         android:padding="@dimen/value_12"
+        android:textColor="@color/text_primary"
+        android:textColorHint="@color/black"
         android:textSize="@dimen/text_value_14" />
 
     <androidx.recyclerview.widget.RecyclerView

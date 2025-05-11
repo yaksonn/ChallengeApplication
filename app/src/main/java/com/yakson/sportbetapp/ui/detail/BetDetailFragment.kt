@@ -47,13 +47,11 @@ class BetDetailFragment : BaseFragment<FragmentBetDetailBinding, BetDetailViewMo
                 eventTitleTextView.text = "${event.home_team} - ${event.away_team}"
                 eventDetailTextView.text = "Başlangıç: ${event.commence_time.formatDate()}"
 
-                // Oranları göster
                 val allOutcomes = event.bookmakers
                     .flatMap { it.markets }
                     .flatMap { it.outcomes }
                 val oddsAdapter = OddsAdapter { outcome ->
                     outCome.add(outcome)
-                    // Sepete ekleme event'i
                     requireContext().logFirebaseEvent("add_to_cart_event") {
                         putString("outcome_name", outcome.name)
                         putDouble("price", outcome.price)
