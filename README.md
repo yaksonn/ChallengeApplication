@@ -1,4 +1,4 @@
-# Sport Bet App
+
 
 Merhaba! Bu proje, spor bahisleri için geliştirdiğim bir Android uygulaması. Uygulamada canlı maç oranlarını görebilir, bahis kuponları oluşturabilir ve yönetebilirsiniz.
 
